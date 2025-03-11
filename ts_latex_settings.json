@@ -1,0 +1,111 @@
+    // TeX settings 
+    "latex-workshop.latex.tools": [
+        {
+            "name": "platex",
+            "command": "/Library/TeX/texbin/platex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "dvipdfmx",
+            "command": "/Library/TeX/texbin/dvipdfmx",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "uplatex2pdf",
+            "command": "ptex2pdf",
+            "args": [
+              "-u",
+              "-l",
+              "-ot",
+              "-kanji=utf8",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ]
+          },
+          {
+            "name": "upbibtex",
+            "command": "upbibtex",
+            "args": [
+              "-kanji=utf8",
+              "%DOCFILE%"
+            ]
+          },
+    ],
+    "latex-workshop.latex.recipes": [
+          {
+            "name": "uplatex2pdf (ptex2pdf)",
+            "tools": [
+              "uplatex2pdf",
+              "upbibtex",
+              "uplatex2pdf",
+              "upbibtex",
+              "uplatex2pdf"
+            ]
+          },
+          {
+              "name": "platex -> dvipdfmx",
+              "tools": [
+                  "platex",
+                  "platex",
+                  "dvipdfmx"
+              ]
+          },
+          {
+            "name": "All Build (ptex2pdf → upbibtex → ptex2pdf *3)",
+            "tools": [
+              "uplatex2pdf",
+              "upbibtex",
+              "uplatex2pdf",
+              "uplatex2pdf",
+              "uplatex2pdf"
+            ]
+          },
+
+    ],
+    "latex-workshop.latex.defaultRecipe": "uplatex2pdf (ptex2pdf)",
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.method": "glob",
+    "latex-workshop.latex.clean.fileTypes": [
+      "%DOCFILE%.acn",
+      "%DOCFILE%.acr",
+      "%DOCFILE%.alg",
+      "%DOCFILE%.aux",
+      "%DOCFILE%.bbl",
+      "%DOCFILE%.blg",
+      "%DOCFILE%.dvi",
+      "%DOCFILE%.fdb_latexmk",
+      "%DOCFILE%.fls",
+      "%DOCFILE%.glg",
+      "%DOCFILE%.glo",
+      "%DOCFILE%.gls",
+      "%DOCFILE%.idx",
+      "%DOCFILE%.ind",
+      "%DOCFILE%.ist",
+      "%DOCFILE%.lof",
+      "%DOCFILE%.lot",
+      "%DOCFILE%.nav",
+      "%DOCFILE%.out",
+      "%DOCFILE%.snm",
+      "%DOCFILE%.synctex.gz",
+      "%DOCFILE%.synctex.gz(busy)",
+      "%DOCFILE%.synctex(busy)",
+      "%DOCFILE%.toc",
+      "%DOCFILE%.vrb",
+      "%DOCFILE%_minted%DOCFILE%",
+      // "%DOCFILE%.log",
+      // "__latexindent_temp.tex"
+    ],
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.zoom": "page-width",
+    "latex-workshop.intellisense.package.enabled": true,
