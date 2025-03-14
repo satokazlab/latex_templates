@@ -76,13 +76,29 @@ Preferences: Open User Settings (JSON)
 
 
 ## 使い方
+tex ファイルを開くと，拡張機能が自動的に表示されます．
+画像の左側にlatex Workshop のメニューが開き，ビルドレシピが表示されています．
+このうち，レジュメビルドをクリックすると，ビルドされます．
+または，cmd + option + B でもビルドできます．
+<p align="center">
+  <img src="./Docs/latex_workshop.png" width="50%">
+</p>
+
 ### 1. 論文の作成
 [`thesis`](./thesis)は，卒業論文，修士論文を作成するテンプレートです．
 表紙があり，章，節，項で構成されます．
 
 ### 2. レジュメの作成
-卒業論文，修士論文を要約したものです．諮問要旨，予稿論文と呼ばれる．
+[`resume`](./resume) 卒業論文，修士論文を要約したものです．
+諮問要旨，予稿と呼ばることがあります．
 卒業論文は1 ページ，修士論文は2 ページを作成します．
+
+### TIPS
+`settings.json` でつぎの`autoBuild`設定を`"never"`の部分を`onSave`に変更すると，変更を保存するたびにビルドが実行されるようになります．
+```
+"latex-workshop.latex.autoBuild.run": "never", // onSave: 保存 cmd+s でビルドされる
+```
+
 
 <!-- ### 3. レポートの作成 -->
 <!-- 授業などでお使いください． -->

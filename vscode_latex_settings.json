@@ -55,7 +55,7 @@
   ],
   "latex-workshop.latex.recipes": [
           {
-          "name": "uplatex2pdf (ptex2pdf)",
+          "name": "📄論文ビルド(uplatex2pdf)",
           "tools": [
               "uplatex2pdf",
               "upbibtex",
@@ -65,7 +65,7 @@
           ]
           },
           {
-              "name": "lualatex",
+              "name": "📝レジュメビルド(lualatex)",
               "tools": ["lualatex"]
           },
           
@@ -77,17 +77,6 @@
                   "dvipdfmx"
               ]
           },
-          {
-          "name": "All Build (ptex2pdf → upbibtex → ptex2pdf *3)",
-          "tools": [
-              "uplatex2pdf",
-              "upbibtex",
-              "uplatex2pdf",
-              "uplatex2pdf",
-              "uplatex2pdf"
-          ]
-          },
-
   ],
   "latex-workshop.latex.defaultRecipe": "uplatex2pdf (ptex2pdf)",
   "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
@@ -123,7 +112,7 @@
       // "%DOCFILE%.log",
       // "__latexindent_temp.tex"
   ],
-  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.autoBuild.run": "never", // onSave: 保存 cmd+s でビルドされる
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.view.pdf.zoom": "page-width",
   "latex-workshop.intellisense.package.enabled": true,
